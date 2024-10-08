@@ -27,7 +27,7 @@ Output: [0,1]
 nums = []
 
 while True:
-    num = input('Informe o número do vetor: ')
+    num = int(input('Informe o número do vetor: '))
     condicao = input('Deseja adicionar mais elementos? [s/n]')
     nums.append(num)
     if condicao == 'n':
@@ -37,16 +37,12 @@ while True:
 def TwoSuns(nums, target):
     for indice1, num1 in enumerate(nums):
         for indice2, num2 in enumerate(nums):
+            soma = 0
             if indice1 != indice2:
                 soma = num1+num2
                 if soma == target:
-                        
-                    print(num1, num2)
                     print(indice1, indice2)
-                    #if soma == target:
-                    #    print(indice1, indice2)
-                    
-                
-                
-target = input('Infome o valor do target: ')
+                    break
+
+target = int(input('Infome o valor do target: '))
 TwoSuns(nums, target)
