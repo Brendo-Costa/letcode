@@ -24,25 +24,22 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 """
 
-nums = []
-
-while True:
-    num = int(input('Informe o número do vetor: '))
-    condicao = input('Deseja adicionar mais elementos? [s/n]')
-    nums.append(num)
-    if condicao == 'n':
-        print(nums)
-        break
+def two_sum(nums, target):
+    # Dicionário para armazenar os números visitados e seus índices
+    num_dict = {}
     
-def TwoSuns(nums, target):
-    for indice1, num1 in enumerate(nums):
-        for indice2, num2 in enumerate(nums):
-            soma = 0
-            if indice1 != indice2:
-                soma = num1+num2
-                if soma == target:
-                    print(indice1, indice2)
-                    break
+    # Itera sobre a lista de números
+    for i, num in enumerate(nums):
+        complement = target - num
+        
+        # Verifica se o complemento já está no dicionário
+        if complement in num_dict:
+            return [num_dict[complement], i]
+        
+        # Armazena o número e seu índice no dicionário
+        num_dict[num] = i
 
-target = int(input('Infome o valor do target: '))
-TwoSuns(nums, target)
+# Exemplo de uso
+nums = [2, 7, 11, 15]
+target = 9
+print(two_sum(nums, target))  # Retorna [0, 1]
