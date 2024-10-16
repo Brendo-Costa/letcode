@@ -42,4 +42,4 @@ def two_sum(nums, target):
 # Exemplo de uso
 nums = [2, 7, 11, 15]
 target = 9
-print(two_sum(nums, target))  # Retorna [0, 1]
+print(two_sum(nums, target))  # Retorna [0, 1]                                                                                                                                                                                                                                                                  
