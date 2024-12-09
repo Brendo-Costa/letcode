@@ -6,7 +6,7 @@
 """
 
 
-def unravelWords(word:str):
+""" def unravelWords(word:str):
     word_dict = {}
     
     for letter in word:
@@ -34,4 +34,30 @@ def anagramValidator(s:str, t:str) -> bool:
 s = "jar"
 t = "jam"
 result = anagramValidator(s, t)
+print(result) """
+
+
+def SepareteLetters(word):
+    dict_word = {}
+    for letter in word:
+        if letter in dict_word:
+            dict_word[letter] += 1
+        else:
+            dict_word[letter] = 1 
+    print(dict_word)
+    return dict_word            
+
+def ValidAnagram(word1, word2):
+    separete_word1 = SepareteLetters(word1)
+    separete_word2 = SepareteLetters(word2)
+    
+    if separete_word1 == separete_word2:
+        return True
+    else:
+        return False
+    
+
+s = "mja"
+t = "jam"
+result = ValidAnagram(s, t)
 print(result)
