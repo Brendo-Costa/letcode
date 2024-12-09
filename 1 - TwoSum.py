@@ -23,7 +23,7 @@ Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
 """
-
+""" 
 def two_sum(nums, target):
     # Dicionário para armazenar os números visitados e seus índices
     num_dict = {}
@@ -43,3 +43,22 @@ def two_sum(nums, target):
 nums = [2, 7, 11, 15]
 target = 9
 print(two_sum(nums, target))  # Retorna [0, 1]                                                                                                                                                                                                                                                                  
+ """
+ 
+ 
+ 
+def TwoSum(nums, target):
+    
+    nums_dict = {} #Chave:Valor -> Inteiro:Index
+    
+    for index, num in enumerate(nums):
+        complement = target - num
+        nums_dict[num] = index
+        if complement in nums_dict:
+            print(nums_dict[complement], index)
+        
+    print(nums_dict)
+    
+    
+lista = [1, 2, 3, 4, 5]
+TwoSum(lista, 5)
